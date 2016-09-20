@@ -156,3 +156,36 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 	//console.log(iterator.next());
 }());
 
+
+
+// pop()
+// removes and returns last element of array
+(function(){
+	var array = [0,1,2,3,4,5];
+	array.pop();
+	//console.log(array);
+}());
+
+
+// push()
+// adds element(s) to end of array and returns new array length
+(function(){
+	var array = [1,2,3,4,5];
+	array.push(6);
+	//console.log(array);
+}());
+
+
+
+// reduce()
+// applies function against accumulator and each value of array to reduce to a single value
+// params: callback [, initialValue]
+(function(){
+	var array = [0,1,2,3,4,5];
+	var newNum = array.reduce(function(acc, num){
+		console.log(acc);
+		console.log(num);
+		return acc + num;
+	});
+	//console.log(newNum);
+}());
