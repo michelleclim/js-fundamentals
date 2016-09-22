@@ -158,6 +158,32 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 
 
 
+// lastIndexOf()
+// returns last index of given element
+(function(){
+	var array = [1,1,2,3,3,1,4,5,3];
+	var selection = array.lastIndexOf(1);
+	//console.log(selection);
+}());
+
+
+
+// map()
+// creates new array with results of provided function per element
+// param: callback [, thisArg]
+(function(){
+	var array = [1,2,3,4,5];
+	function updateArray(num) {
+		return num + 10;
+	}
+	var newArray = array.map(updateArray);
+	//console.log(newArray);
+
+	
+}());
+
+
+
 // pop()
 // removes and returns last element of array
 (function(){
@@ -165,6 +191,7 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 	array.pop();
 	//console.log(array);
 }());
+
 
 
 // push()
@@ -187,5 +214,20 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 		console.log(num);
 		return acc + num;
 	});
-	//console.log(newNum);
+	console.log(newNum);
 }());
+
+
+
+// reduceRight()
+// applies function against accumulator and each value os reduced (right to left)
+(function(){
+	var array = [0,1,2,3,4,5];
+	var newNum = array.reduceRight(function(acc,num){
+		console.log(acc);
+		console.log(num);
+		return acc + num;
+	});
+	console.log(newNum);
+}());
+
