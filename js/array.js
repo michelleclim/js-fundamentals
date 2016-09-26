@@ -210,11 +210,9 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 (function(){
 	var array = [0,1,2,3,4,5];
 	var newNum = array.reduce(function(acc, num){
-		console.log(acc);
-		console.log(num);
 		return acc + num;
 	});
-	console.log(newNum);
+	//console.log(newNum);
 }());
 
 
@@ -224,10 +222,129 @@ var array3 = array2.concat(array1, ['dog', 'cat'], 'woof');
 (function(){
 	var array = [0,1,2,3,4,5];
 	var newNum = array.reduceRight(function(acc,num){
-		console.log(acc);
-		console.log(num);
 		return acc + num;
 	});
-	console.log(newNum);
+	//console.log(newNum);
 }());
+
+
+
+// reverse()
+// reverses an array
+(function(){
+	var array = [0,1,2,3,4,5];
+	array.reverse();
+	//console.log(array);
+}());
+
+
+
+// shift()
+// removes first element from array
+(function(){
+	var array = [0,1,2,3,4,5];
+	array.shift();
+	//console.log(array);
+}());
+
+
+
+// slice()
+// returns shallow copy of portion of an array into new array
+(function(){
+	var array = [0,1,2,3,4,5];
+	var newArray = array.slice(0,2);
+	//console.log(newArray);
+}());
+
+
+
+// some()
+// method tests some elements in the array provided function till it finds truthy value
+// returns true, otherwise false
+(function(){
+	var array = [0,1,2,3,4,5];
+	array.some(function(ele){
+		return ele > 4;
+	});
+	// returns true
+}());
+
+
+
+// sort()
+// reorders array based on compare function
+// default compare function converts to string and orders in unicode point order
+(function() {
+	var array = ['daniel', 'tim', 'graham', 'eric', 'sanath'];
+	array.sort(function(a,b){
+		if (a < b) { return -1 }
+		if (b < a) { return 1 }
+		if (a == b) { return 0 }
+	});
+	//console.log(array);
+
+	var array2 = [30,1,23,03,41,5];
+	array2.sort(function(a,b){
+		return a-b;
+	});
+	//console.log(array2);
+}());
+
+
+
+// splice()
+// removes or adds new elements to array
+// params: start, deleteCount [, item1, item2...]
+(function(){
+	var array = [0,1,2,4,5];
+	array.splice(3, 0, 3);
+	//console.log(array);
+	array.splice(0,1);
+	//console.log(array);
+}());
+
+
+
+// toLocaleString()
+// returns string of elements from array
+(function(){
+	var array = ['dog', 'cat', 'pig', 'rat'];
+	var newarray = array.toLocaleString();
+	//console.log(newarray);
+}());
+
+
+
+// toString()
+// returns string of elements from array
+(function(){
+	var array = ['dog', 'cat', 'pig', 'rat'];
+	var newarray = array.toString();
+	//console.log(newarray);
+}());
+
+
+
+
+// unshift()
+// adds one or more elements to beginning of array, returns new length
+(function(){
+	var array = [0,1,2,3,4];
+	array.unshift(-3,4);
+	//console.log(array);
+}());
+
+
+
+// values()
+// returns new array iterator that contains values for each index in array
+(function(){
+	var array = [0,1,2,3,4,5];
+	var iterator = array.values();
+	// for (let item of iterator) {
+	// 	console.log(item);
+	// }
+}());
+
 
